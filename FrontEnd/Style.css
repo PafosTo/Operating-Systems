@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+:root {
+    --primary: #FF9950; ;
+    --primary-hover: #CD7D7C;                
+    --secondary: #EFD0F8;
+    --secondary-hover: #B8A1D9;
+    --aura: #9265CA80;
+    --background: #261E5A;
+    --navbar-height: 3.75rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mulish, sans-serif;
+}
+
+.background {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(assets/universe.jpg);
+    opacity: 0.5;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 1.5rem;
+    gap: 2rem;
+    background-color: var(--background);
+    height: 3.75rem;
+}
+
+h1{
+    color: white;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+}
+
+.navigation {    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 1.5rem;
+    padding: 0;
+    background-color: var(--background);
+}
+
+.logo {
+    margin-left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    isolation: isolate;
+}
+
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+                    
+.navigation > li {
+  color: white;
+  display: flex;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  width: max-content;
+  transition: all 0.2s;
+}
+
+a {
+    color: white; /* Mantén los enlaces en blanco */
+    text-decoration: none; /* Opcional: elimina el subrayado */
+}
+
+a:hover {
+    color: var(--primary); /* Cambia el color al pasar el cursor, si lo deseas */
+}
+
+.navigation > li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.125rem;
+  bottom: -0.3rem;
+  left: 0;
+  background: linear-gradient(90deg, var(--background), var(--primary), var(--background));
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-out;
+}
+
+.navigation > li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+
+    .navigation--mobile {
+        top: var(--navbar-height);
+        position: absolute;
+        display: flex;
+        padding: 1.25rem;
+        background-color: var(--background);
+        width: 100%;
+        height: calc(100vh - var(--navbar-height));
+        gap: 0.5rem;
+        flex-direction: column;
+        animation: fade 1s ease-in 1 forwards;
+    }
+}
+/*Seccion Contacto*/
+.contacto p{
+    text-align: center;
+}
+.contenedor,
+.wave.contenedor{
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+.contenedor{
+   padding: 80px 0;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input{
+    background: transparent;
+    border: 0;
+    color: black;
+    outline: none;
+    border: 1px solid black;
+    padding: 20px 10px;
+}
+.input::placeholder{
+    color: black;
+    font-family: "Releway", sans-serif;
+}
+input[type="text"],
+input[type="email"]{
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 30px;
+}
+.form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+}
+input[type="submit"]{
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+}
+footer{
+    background: #261E5A;
+    color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+.containerF{
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; 
+}
+.boxF{
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    align-items: left;
+    justify-content: left;
+    box-shadow: 0px 0px 55px 5px rgb(0 0 0/6%);
+}
+.boxF img{
+    width: 100px;
+    align-items: left;
+    justify-content: left;
+}
+.boxF p{
+    text-align: left;
+    color:#82AC26;
+}
